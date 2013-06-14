@@ -101,5 +101,5 @@ value['items'].each do |v|
       end
   end
 end
-puts "OK - All messages sent in last #{options[:minutes]} were fine."
+puts "OK - All messages sent in last #{options[:minutes]} minutes were fine."
 exit 0
