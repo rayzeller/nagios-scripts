@@ -88,10 +88,8 @@ string=`curl -s --user api:#{options[:api_key]} \
         # -F 'end=1294034400' \
 
 value = JSON.parse(string)
-puts value
-# New OrderAhead order
 value['items'].each do |v|
-  if(DateTime.parse(v['created_at']).to_time > Time.now - options[:minutes] * 60)
+  if(DateTime.parse(v['created_at']) > DateTime.now - options[:minutes].to_f/1440.0)
     case v['type']
       when "info"
         
