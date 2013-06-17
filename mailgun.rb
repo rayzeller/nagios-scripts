@@ -95,8 +95,9 @@ value['items'].each do |v|
         
       else
         if(v['message'].match(options[:search]))
-          puts "CRITICAL - #{v['message']}"
-          exit 2
+
+          puts "WARNING - There was a problem delivering one of our emails.  Here's the mail log:\n\n#{v['message']}"
+          exit 1
         end
       end
   end
