@@ -95,8 +95,8 @@ value['items'].each do |v|
         
       else
         if(v['message'].match(options[:search]))
-
-          puts "WARNING - There was a problem delivering one of our emails.  Here's the mail log:\n\n#{v['message']}"
+          string = v['message']
+          puts "WARNING - There was a problem delivering one of our emails.  Here's the mail log:\n\n#{string}"
           exit 1
         end
       end
