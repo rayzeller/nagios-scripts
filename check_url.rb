@@ -61,7 +61,7 @@ end
 options = parse_args(ARGV)
 sanity_check(options)
 
-result =`curl #{options[:url]}`
+result =`curl -L #{options[:url]}`
 search = !result.match(options[:query]).nil?
 case search
  when true
